@@ -30,7 +30,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:"Hiragino Sans"
 .eyebrow{color:var(--accent);font-size:13px;letter-spacing:.15em}
 h1{font-size:28px;line-height:1.45;margin:12px 0 16px;font-weight:700}
 .lead{color:var(--muted);font-size:15px}
-.hero{width:100%;aspect-ratio:4/5;background:var(--panel);border:1px solid var(--line);margin:28px 0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;object-fit:cover}
+.hero{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:4/5;object-position:center 60%;background:var(--panel);border:1px solid var(--line);margin:28px 0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;object-fit:cover}
 .cta{display:block;text-align:center;background:var(--accent);color:#111;font-weight:700;text-decoration:none;padding:18px;border-radius:6px;font-size:17px}
 .note{text-align:center;color:var(--muted);font-size:12px;margin-top:8px}
 h2{font-size:20px;margin:48px 0 16px;border-left:3px solid var(--accent);padding-left:12px}
@@ -50,9 +50,7 @@ ol li::before{content:"DAY " counter(d);position:absolute;left:14px;top:16px;col
   <div class="eyebrow">トレーナー・整体師・セラピストの方へ</div>
   <h1>手技を増やす前に、<br>「なぜそこか」を説明できるか。</h1>
   <p class="lead">足関節から顎まで、つながりで身体を見る7日間。評価の順番、アプローチを選ぶ理由、現場での判断を、LINEで無料配信しています。</p>
-
-  <!-- 実写写真に差し替え：指導風景・解剖学の教材 -->
-  <div class="hero">（ここに指導風景・教材の写真）</div>
+  <img class="hero" src="hero.jpg" alt="受講者の前で施術を解説する原口慶篤">
 
   <a class="cta js-line" href="https://lin.ee/OyfgnE3">LINEで7日間の配信を受け取る</a>
   <p class="note">登録は無料。いつでもブロックできます。</p>
