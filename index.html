@@ -54,9 +54,9 @@ h2{font-size:20px;margin:44px 0 14px;border-left:3px solid var(--accent);padding
 <main class="wrap">
 <div class="eyebrow">トレーナー・整体師・セラピストの方へ</div>
 <h1>手技を増やす前に、<br>「なぜそこか」を説明できるか。</h1>
-<p class="lead">施術しても戻る、説明に自信が持てない ― その多くは、手技の数ではなく「見る順番」が決まっていないことから起こります。4つの質問で、あなたの評価のつまずきポイントをチェックしてください。</p>
+<p class="lead">施術しても戻る、説明に自信が持てない ― その多くは、手技の数ではなく「見る順番」が決まっていないことから起こります。「あるある」と思うものを4つだけチェックしてください。あてはまった悩みに合わせた特典をお届けします。</p>
 <div class="gift"><span class="lbl">無料プレゼント</span><h2>臨床評価スターターキット</h2><ul><li>評価の順番チェックシート(足関節〜顎の7部位・PDF)</li><li>7日間講座「足関節から顎まで、つながりで身体を見る」</li><li>全国の専門家が集まる無料コミュニティへの招待</li></ul></div>
-<button class="btn" id="start" type="button">4つの質問で、評価のつまずきをチェックする(無料)</button>
+<button class="btn" id="start" type="button">あてはまるか、4つだけチェックする(無料)</button>
 <p class="note">所要1分・登録は無料。いつでもブロックできます。</p>
 <section id="quiz" hidden><div class="bar"><i id="pg"></i></div><div id="qbox"></div></section>
 <img class="hero" src="hero.jpg" alt="受講者の前で施術を解説する原口慶篤">
@@ -67,7 +67,7 @@ h2{font-size:20px;margin:44px 0 14px;border-left:3px solid var(--accent);padding
 </main>
 <div class="fixed" id="fx"><button class="btn" type="button" onclick="startQuiz()">4つの質問でチェックする(無料)</button></div>
 <script>
-var QS=[{"q": "あなたのお仕事に近いのは?", "o": [["トレーナー・インストラクター", "A"], ["整体師・セラピスト", "B"], ["国家資格者(PT・柔整・鍼灸など)", "C"], ["学生・これから目指す", "D"]]}, {"q": "いちばんの悩みは?", "o": [["施術しても戻ってしまう", "B"], ["何から見ればいいか迷う", "D"], ["説明に自信が持てない", "C"], ["運動指導につなげられない", "A"]]}, {"q": "評価で最初に見るのは?", "o": [["痛い・つらい場所", "B"], ["姿勢", "D"], ["動き・動作", "A"], ["その時による", "C"]]}, {"q": "これから学びたいのは?", "o": [["足・歩行", "A"], ["体幹・呼吸", "C"], ["首・肩・顎", "B"], ["評価の全体の流れ", "D"]]}];
+var QS=[{"q": "施術して変化が出ても、次に来たときには戻っている", "o": [["あてはまる", "Y"], ["あてはまらない", "N"]], "g": "戻る理由を探す「評価の順番チェックシート」"}, {"q": "初回の評価で、何から見ればいいか毎回迷う", "o": [["あてはまる", "Y"], ["あてはまらない", "N"]], "g": "足関節〜顎の7部位を同じ順番で見る評価シート"}, {"q": "クライアントに「なぜそこを触るのか」を説明しきれない", "o": [["あてはまる", "Y"], ["あてはまらない", "N"]], "g": "再評価シート ―「何が変わったら正解か」を記録"}, {"q": "評価の結果を、施術や運動指導の選び方につなげられない", "o": [["あてはまる", "Y"], ["あてはまらない", "N"]], "g": "7日間講座「評価→選択→再評価」の考え方"}];
 var RES={"A": ["つまずきポイント:評価と運動がつながっていない", "動きは見られているのに、評価の結果が施術や運動の「選び方」につながりにくい状態かもしれません。", "評価の順番チェックシートで、足関節から順に「何を見て、何を選ぶか」を整理できます。7日間講座と一緒にLINEでお届けします。"], "B": ["つまずきポイント:痛い場所から見てしまう", "つらい場所に直接アプローチして、その場は変わっても戻りやすい状態かもしれません。「硬い」は結果で、原因とは限りません。", "評価の順番チェックシートで、足関節から顎まで「つながり」で見る順番を整理できます。7日間講座と一緒にLINEでお届けします。"], "C": ["つまずきポイント:再評価の基準があいまい", "知識はあるのに、何が変わったら正解かの基準が決まっておらず、説明に自信が持ちにくい状態かもしれません。", "チェックシートの「再評価」欄で、変わった項目と次の仮説を毎回記録できます。7日間講座と一緒にLINEでお届けします。"], "D": ["つまずきポイント:見る順番が決まっていない", "毎回見るところが変わり、評価に時間がかかったり、迷ったりしやすい状態かもしれません。", "評価の順番チェックシート(7部位)で、毎回同じ順番で見る型が作れます。7日間講座と一緒にLINEでお届けします。"]};
 var LINE="https://lin.ee/OyfgnE3";var ans=[],i=0,started=false;
 function ev(n){try{if(window.fbq)fbq('trackCustom',n)}catch(e){}}
@@ -76,8 +76,5 @@ document.getElementById('start').onclick=startQuiz;
 function render(){var b=document.getElementById('qbox');document.getElementById('pg').style.width=(i/QS.length*100)+'%';
  if(i<QS.length){var q=QS[i];b.innerHTML='<div class="qn">QUESTION '+(i+1)+' / '+QS.length+'</div><div class="qt"></div><div class="opts"></div>';b.querySelector('.qt').textContent=q.q;
   q.o.forEach(function(o){var x=document.createElement('button');x.type='button';x.className='opt';x.textContent=o[0];x.onclick=function(){ans.push(o[1]);i++;render()};b.querySelector('.opts').appendChild(x)});return}
- ev('QuizComplete');var c={};ans.forEach(function(a){c[a]=(c[a]||0)+1});var best=ans[ans.length-1];Object.keys(c).forEach(function(k){if(c[k]>c[best])best=k});var r=RES[best];
- b.innerHTML='<div class="res"><div class="qn">あなたの結果</div><h3></h3><p class="p1"></p><p class="p2" style="color:var(--text)"></p><a class="btn js-line" href="'+LINE+'">チェックシートと7日間講座をLINEで受け取る</a><p class="note">LINEが開かない方は、LINEアプリでID検索してください:<b>@891spabc</b></p></div>';
- b.querySelector('h3').textContent=r[0];b.querySelector('.p1').textContent=r[1];b.querySelector('.p2').textContent=r[2];
- b.querySelector('.js-line').onclick=function(){try{if(window.fbq)fbq('track','Lead')}catch(e){}};}
+ ev('QuizComplete');var g=[];QS.forEach(function(q,k){if(ans[k]==='Y')g.push(q.g)});var hit=g.length;b.innerHTML='<div class="res"><div class="qn">チェックの結果</div><h3></h3><p class="p1"></p><div class="gift" style="margin:12px 0"><span class="lbl">あなたに届く特典</span><ul class="gl"></ul></div><a class="btn js-line" href="'+LINE+'">この特典をLINEで受け取る(無料)</a><p class="note">LINEが開かない方は、LINEアプリでID検索してください:<b>@891spabc</b></p></div>';b.querySelector('h3').textContent=hit?('あてはまったのは '+hit+' つでした'):"評価の型はすでにできている方です";b.querySelector('.p1').textContent=hit?"あてはまった悩みに合わせて、臨床評価スターターキットからお届けします。手技の数ではなく、見る順番を決めるところから始めましょう。":"さらに精度を上げるための、評価の順番チェックシートと7日間講座をお届けします。";var ul=b.querySelector('.gl');g.concat(["全国の専門家が集まる無料コミュニティへの招待"]).forEach(function(x){var li=document.createElement('li');li.textContent=x;ul.appendChild(li)});b.querySelector('.js-line').onclick=function(){try{if(window.fbq)fbq('track','Lead')}catch(e){}};}
 </script></body></html>
